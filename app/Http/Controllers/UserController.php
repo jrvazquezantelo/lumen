@@ -22,10 +22,20 @@ class UserController extends Controller
         $this->request = $request;
     }
 
-    function createUser() {
-
-        $response = response("", 201);
-
-        return $response;
+    function createUser()
+    {
+        return response($this->userService->add($this->request->all()), 201);
+    }
+    function getListUser()
+    {
+        return response($this->userService->list());
+    }
+    function updateUser(int $id)
+    {
+        return response($this->userService->put($this->request->all(), $id), 202);
+    }
+    function deleteUser(int $id)
+    {
+        return response($this->userService->delete($id), 204);
     }
 }

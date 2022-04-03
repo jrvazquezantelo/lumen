@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Interfaces;
+namespace App\Services\Interface;
 
-interface ServiceInterface {
-    function get();
+interface UserServiceInterface {
+    function list();
     function getById(int $id);
-    function post(array $user);
+    function add(array $user);
     function put(array $user, int $id);
     function delete(int $id);
     function restore(int $id);
